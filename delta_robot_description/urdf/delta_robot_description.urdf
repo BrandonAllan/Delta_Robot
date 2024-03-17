@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="delta_robot_description">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="1.4363E-06 -2.4878E-06 0.023701"
+        rpy="0 0 0" />
+      <mass
+        value="1.8846" />
+      <inertia
+        ixx="0.031183"
+        ixy="-4.2394E-07"
+        ixz="-2.6258E-20"
+        iyy="0.031182"
+        iyz="-2.1176E-20"
+        izz="0.061776" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://delta_robot_description/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://delta_robot_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="bicep_1">
+    <inertial>
+      <origin
+        xyz="0.019912 0.093991 -0.0031098"
+        rpy="0 0 0" />
+      <mass
+        value="0.045007" />
+      <inertia
+        ixx="0.00026426"
+        ixy="-8.1884E-05"
+        ixz="5.2359E-07"
+        iyy="3.769E-05"
+        iyz="2.8174E-06"
+        izz="0.00030082" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://delta_robot_description/meshes/bicep_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://delta_robot_description/meshes/bicep_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="bicep_1_joint"
+    type="revolute">
+    <origin
+      xyz="-0.0028159 -0.059167 0.039169"
+      rpy="3.1416 1.5708 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="bicep_1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="1.047"
+      upper="1.047"
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="forearm_1">
+    <inertial>
+      <origin
+        xyz="-0.0011961 -0.13052 -0.23292"
+        rpy="0 0 0" />
+      <mass
+        value="0.036137" />
+      <inertia
+        ixx="0.00046089"
+        ixy="-1.004E-06"
+        ixz="-1.8006E-06"
+        iyy="0.00035072"
+        iyz="-0.00019618"
+        izz="0.00011057" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://delta_robot_description/meshes/forearm_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://delta_robot_description/meshes/forearm_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="forearm_1_joint"
+    type="fixed">
+    <origin
+      xyz="0.092722 0.23307 -0.0038182"
+      rpy="-1.5708 -1.5594 1.5708" />
+    <parent
+      link="bicep_1" />
+    <child
+      link="forearm_1" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="end_effector">
+    <inertial>
+      <origin
+        xyz="0.00013119 7.3767E-05 0.0011465"
+        rpy="0 0 0" />
+      <mass
+        value="0.019746" />
+      <inertia
+        ixx="9.0285E-06"
+        ixy="-1.6556E-07"
+        ixz="6.1029E-23"
+        iyy="9.2298E-06"
+        iyz="-2.4106E-23"
+        izz="1.7957E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://delta_robot_description/meshes/end_effector.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://delta_robot_description/meshes/end_effector.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="end_effector_joint"
+    type="fixed">
+    <origin
+      xyz="-0.0019474 -0.29202 -0.4762"
+      rpy="0 0 3.1416" />
+    <parent
+      link="forearm_1" />
+    <child
+      link="end_effector" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="bicep_2">
+    <inertial>
+      <origin
+        xyz="0.019912 0.09399 -0.0031098"
+        rpy="0 0 0" />
+      <mass
+        value="0.045007" />
+      <inertia
+        ixx="0.00026426"
+        ixy="-8.1885E-05"
+        ixz="5.2359E-07"
+        iyy="3.769E-05"
+        iyz="2.8175E-06"
+        izz="0.00030083" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://delta_robot_description/meshes/bicep_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://delta_robot_description/meshes/bicep_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="bicep_2_joint"
+    type="revolute">
+    <origin
+      xyz="0.052648 0.027137 0.039169"
+      rpy="1.0472 1.5708 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="bicep_2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="1.047"
+      upper="1.047"
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="forearm_2">
+    <inertial>
+      <origin
+        xyz="-0.00028764 -0.13053 0.23292"
+        rpy="0 0 0" />
+      <mass
+        value="0.036136" />
+      <inertia
+        ixx="0.00046089"
+        ixy="-2.562E-07"
+        ixz="4.2684E-07"
+        iyy="0.00035071"
+        iyz="0.00019619"
+        izz="0.00011057" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://delta_robot_description/meshes/forearm_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://delta_robot_description/meshes/forearm_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="forearm_2_joint"
+    type="fixed">
+    <origin
+      xyz="0.092722 0.23307 -0.0038182"
+      rpy="0 1.5708 0" />
+    <parent
+      link="bicep_2" />
+    <child
+      link="forearm_2" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="bicep_3">
+    <inertial>
+      <origin
+        xyz="0.093991 -0.019912 -0.0031098"
+        rpy="0 0 0" />
+      <mass
+        value="0.045007" />
+      <inertia
+        ixx="3.769E-05"
+        ixy="8.1884E-05"
+        ixz="2.8174E-06"
+        iyy="0.00026426"
+        iyz="-5.2359E-07"
+        izz="0.00030082" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://delta_robot_description/meshes/bicep_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://delta_robot_description/meshes/bicep_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="bicep_3_joint"
+    type="revolute">
+    <origin
+      xyz="-0.049826 0.032018 0.039169"
+      rpy="1.5708 0 2.618" />
+    <parent
+      link="base_link" />
+    <child
+      link="bicep_3" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="1.047"
+      upper="1.047"
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="forearm_3">
+    <inertial>
+      <origin
+        xyz="0.0017747 -0.13052 -0.23292"
+        rpy="0 0 0" />
+      <mass
+        value="0.036137" />
+      <inertia
+        ixx="0.00046087"
+        ixy="1.4986E-06"
+        ixz="2.6641E-06"
+        iyy="0.00035073"
+        iyz="-0.00019617"
+        izz="0.00011057" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://delta_robot_description/meshes/forearm_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://delta_robot_description/meshes/forearm_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="forearm_3_joint"
+    type="fixed">
+    <origin
+      xyz="0.23307 -0.092722 -0.0038182"
+      rpy="1.5708 -1.5594 3.1416" />
+    <parent
+      link="bicep_3" />
+    <child
+      link="forearm_3" />
+    <axis
+      xyz="0 0 0" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+</robot>
